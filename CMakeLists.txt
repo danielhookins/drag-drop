@@ -14,14 +14,11 @@ set(SDL2_LIBRARY_DIR "${SDL2_PATH}/lib/x64") # Assuming you're targeting 64-bit
 include_directories(${SDL2_INCLUDE_DIR})
 link_directories(${SDL2_LIBRARY_DIR})
 
-add_definitions(-DSDL_MAIN_HANDLED)
-
 # Add the source files
 file(GLOB SOURCES "src/*.cpp")
 
 # Create the executable
 add_executable(DragDrop WIN32 ${SOURCES})
 
-# Link the SDL2 libraries
-target_link_libraries(DragDrop SDL2.lib SDL2main.lib)
-
+# Link the SDL2 libraries (ensure SDL2main.lib is before SDL2.lib)
+target_link_libraries(DragDrop SDL2main.lib SDL2.lib)

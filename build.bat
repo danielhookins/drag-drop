@@ -6,6 +6,6 @@ cd build
 cmake -G "Visual Studio 16 2019" ..
 cmake --build . --config Release
 
-copy ..\lib\SDL2-VC\lib\x64\SDL2.dll .
+copy ..\lib\SDL2\lib\x64\SDL2.dll .
 
 cd ..
